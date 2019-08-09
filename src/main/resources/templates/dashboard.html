@@ -103,7 +103,7 @@
     <div id="container3" style="width: 50%; height: 50%; float: left;"></div>
 
 
-		<script type="text/javascript">
+		<script th:inline="javascript">
 		Highcharts.setOptions({
   colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
 }
@@ -126,17 +126,12 @@ Highcharts.chart('container', {
         align:'left'
     },
     xAxis: {
-        categories: [
-            'MAT Sprint 1',
-            'MAT Sprint 2',
-            'MAT Sprint 3',
-            'MAT Sprint 4'
-        ],
+        categories: /*<![CDATA[*/[[${sprintNameForVelocityChart}]]/*]]>*/,
         crosshair: true
     },
     yAxis: {
         min: 0,
-        max:35,
+<!--        max:50,-->
         title: {
             text: ''
         }
@@ -168,12 +163,12 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Velocity',
-        data: [7, 8, 23, 20]
+        data: [[${sprintVelocity}]]
             },
      {
         type:'spline',
         name: 'Velocity Predictability',
-        data: [0,32,0,0]
+        data: [[${sprintVelocityPredictability}]]
     } 
     
     ]
@@ -194,12 +189,7 @@ Highcharts.chart('container1', {
         text: 'ANZ - Secure Sentinel'
     },
     xAxis: {
-        categories: [
-            'MAT Sprint 1',
-            'MAT Sprint 2',
-            'MAT Sprint 3',
-            'MAT Sprint 4'
-        ],
+        categories: /*<![CDATA[*/[[${sprintNameForVelocityChart}]]/*]]>*/,
         crosshair: false
     },
     yAxis: {
@@ -235,7 +225,7 @@ Highcharts.chart('container1', {
     },
     series: [{
         name: 'Accepted/Committed',
-        data: [100, 133, 100, 100]
+        data: [[${sprintSuccessRate}]]
 
             }
          
@@ -256,7 +246,7 @@ Highcharts.chart('container2', {
         text: 'Scope Change'
           },
     xAxis: {
-        categories: ['MAT Sprint 1', 'MAT Sprint 2', 'MAT Sprint 3', 'MAT Sprint 4']
+        categories: /*<![CDATA[*/[[${sprintNameForVelocityChart}]]/*]]>*/
     },
     yAxis: {
         min: 0,
@@ -297,10 +287,10 @@ Highcharts.chart('container2', {
     },
     series: [{
         name: 'Added Scope',
-        data: [0, 2, 0, 0 ]
+        data: [[${sprintAddedWork}]]
     }, {
         name: 'Committed Work',
-        data: [7, 6, 22, 20]
+        data: [[${sprintVelocityCommitted}]]
     },
 	{
         name: 'Removed  Scope',

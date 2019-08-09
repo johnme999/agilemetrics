@@ -19,10 +19,11 @@ public class SprintController {
 	
 	@RequestMapping(value = "/sprintdatabyprojectname/{projectName}", method = RequestMethod.GET, produces = "application/json")
 	public List<Sprint> fetchSprintDetailsByProjectName(@PathVariable String projectName) {
-		List<Sprint> sprintData = sprintRepository.findByProjectName(projectName);
-		for (Sprint sprint : sprintData) {
-			System.out.println(sprint.getName());
-		}
-		return sprintData;
+//		List<Sprint> sprintData = sprintRepository.findByProjectName(projectName);
+//		for (Sprint sprint : sprintData) {
+//			System.out.println(sprint.getName());
+//		}
+//		return sprintData;
+		return null;
 	}
 }
