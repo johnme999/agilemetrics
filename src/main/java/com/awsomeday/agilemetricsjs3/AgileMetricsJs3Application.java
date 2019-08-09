@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AgilemetricsJs3Application {
+public class AgileMetricsJs3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AgilemetricsJs3Application.class, args);
+		SpringApplication.run(AgileMetricsJs3Application.class, args);
 	}
 
 }
