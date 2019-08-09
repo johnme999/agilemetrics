@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 	<head>
-        <title>Agile Metrics - Dashboard</title>
+        <title>Awsome Dashboard</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
         <!-- Main CSS --> 
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="../CSS/style.css">
 
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -50,32 +50,32 @@
                     <div class="collapse navbar-collapse" id="mainNavbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                    <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                             </li>
 
-<!--                            <li class="nav-item dropdown">-->
-<!--                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BU Classification</a>-->
-<!--                                        -->
-<!--                            </li>-->
+                            <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BU Classification</a>
+                                        
+                            </li>
 
 
-<!--                            <li class="nav-item">-->
-<!--                                    <a class="nav-link" href="#">Services</a>-->
-<!--                            </li>-->
+                            <li class="nav-item">
+                                    <a class="nav-link" href="#">Services</a>
+                            </li>
 
-<!--                            <li class="nav-item">-->
-<!--                                    <a class="nav-link" href="#">Products</a>-->
-<!--                            </li>-->
+                            <li class="nav-item">
+                                    <a class="nav-link" href="#">Products</a>
+                            </li>
 
-<!--                            <li class="nav-item">-->
-<!--                                    <a class="nav-link" href="#">Contact</a>-->
-<!--                            </li>-->
+                            <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                            </li>
                         </ul>
 
-<!--                        <form class="form-inline header-search-form my-2 my-lg-0">-->
-<!--                            <input class="form-control mr-sm-2" type="text" size="10"  placeholder="Search" aria-label="Search">-->
-<!--                            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>-->
-<!--                        </form>-->
+                        <form class="form-inline header-search-form my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" size="10"  placeholder="Search" aria-label="Search">
+                            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
 
                     </div>
 
@@ -92,40 +92,51 @@
                 <div class="row">
 
                     <!-- Main content -->
-    <script src="/js/highcharts.js"></script>
-    <script src="/js/exporting.js"></script>
-    <script src="/js/export-data.js"></script>
+                   <script src="../../Scripts/highcharts.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/export-data.js"></script>
 
-    <div id="container" style="width: 50%; height: 50%; float: left;"></div>
+<div id="container" style="width: 50%; height: 50%; float: left;"></div>
 
-    <div id="container1" style="width: 50%; height: 50%; float: left;"></div>
-    <div id="container2" style="width: 50%; height: 50%; float: left;"></div>
-    <div id="container3" style="width: 50%; height: 50%; float: left;"></div>
+<div id="container1" style="width: 50%; height: 50%; float: left;"></div>
+
+<div id="container2" style="width: 50%; height: 50%; float: left;"></div>
+<div id="container3" style="width: 50%; height: 50%; float: left;"></div>
 
 
 		<script type="text/javascript">
 		Highcharts.setOptions({
-  colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+  colors: ['#28B463','#E67E22','#3498DB','#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+ plotShadow: true,
+ plotBorderWidth: 1
 }
 );
 
 Highcharts.chart('container', {
     chart: {
         type: 'column',
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-        borderColor: '#EBBA95',
-        borderWidth: 2,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
+        borderColor: 'gray',
+        borderWidth: .5,
         borderRadius: 10
     },
     title: {
-        text: 'Velocity Predictability'
+        text: 'Velocity Predictability',
+        style: {
+            color:'white'
+        }
         
     },
     subtitle: {
         text: 'ANZ - Secure Sentinel',
-        align:'left'
+         style: {
+            color:'gray'
+        },
+       
     },
     xAxis: {
+         lineColor: '#ffdb58',
+        lineWidth: 1,
         categories: [
             'MAT Sprint 1',
             'MAT Sprint 2',
@@ -137,19 +148,22 @@ Highcharts.chart('container', {
     yAxis: {
         min: 0,
         max:35,
+        lineColor: '#ffdb58',
+        lineWidth: 1,
         title: {
-            text: ''
-        }
+            text: 'Velocity',
+             }
     },
      legend: {
         align: 'right',
         x: -30,
         verticalAlign: 'top',
+         itemStyle: {
+                   color: 'white'
+        },
         y: 25,
         floating: true,
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
+         backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
         shadow: false
     },
     tooltip: {
@@ -160,6 +174,7 @@ Highcharts.chart('container', {
         shared: true,
         useHTML: true
     },
+   
     plotOptions: {
         column: {
             pointPadding: 0.2,
@@ -169,7 +184,7 @@ Highcharts.chart('container', {
     series: [{
         name: 'Velocity',
         data: [7, 8, 23, 20]
-            },
+                    },
      {
         type:'spline',
         name: 'Velocity Predictability',
@@ -182,18 +197,23 @@ Highcharts.chart('container', {
 Highcharts.chart('container1', {
     chart: {
         type: 'column',
-           backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: '#EBBA95',
-        borderWidth: 2,
+           backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
+            borderColor: 'gray',
+        borderWidth: .5,
         borderRadius: 10
     },
     title: {
-        text: 'Accepted Vs Committed'
+        text: 'Accepted Vs Committed',
+         style: {
+            color:'white'
+        }
     },
     subtitle: {
         text: 'ANZ - Secure Sentinel'
     },
     xAxis: {
+         lineColor: '#ffdb58',
+        lineWidth: 1,
         categories: [
             'MAT Sprint 1',
             'MAT Sprint 2',
@@ -204,6 +224,8 @@ Highcharts.chart('container1', {
     },
     yAxis: {
         min: 0,
+        lineColor: '#ffdb58',
+        lineWidth: 1,
         title: {
             text: 'Accepted Vs Committed'
         }
@@ -212,11 +234,12 @@ Highcharts.chart('container1', {
         align: 'right',
         x: -30,
         verticalAlign: 'top',
+         itemStyle: {
+                   color: 'white'
+        },
         y: 25,
         floating: true,
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
         shadow: false
     },
     tooltip: {
@@ -246,20 +269,25 @@ Highcharts.chart('container1', {
 Highcharts.chart('container2', {
     chart: {
         type: 'column',
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-         borderColor: '#EBBA95',
-        borderWidth: 2,
-        borderRadius: 10
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
+         borderColor: 'gray',
+        borderWidth: .5,
+        borderRadius: 5
     },
 	
     title: {
-        text: 'Scope Change'
+        text: 'Scope Change',
+         style: {
+            color:'white'
+        },
           },
     xAxis: {
         categories: ['MAT Sprint 1', 'MAT Sprint 2', 'MAT Sprint 3', 'MAT Sprint 4']
     },
     yAxis: {
         min: 0,
+        lineColor: '#ffdb58',
+        lineWidth: 1,
         title: {
             text: 'Priority'
         },
@@ -273,13 +301,14 @@ Highcharts.chart('container2', {
     },
     legend: {
         align: 'right',
+        itemStyle: {
+                   color: 'white'
+        },
         x: -30,
         verticalAlign: 'top',
         y: 25,
         floating: true,
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',       
         shadow: false
     },
     tooltip: {
@@ -290,9 +319,13 @@ Highcharts.chart('container2', {
         column: {
             stacking: 'normal',
             dataLabels: {
-                enabled: true,
+              
                 color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-            }
+            },
+             series: {
+            pointWidth: 20
+        }
+        
         }
     },
     series: [{
@@ -313,19 +346,26 @@ Highcharts.chart('container2', {
 Highcharts.chart('container3', {
     chart: {
         type: 'column',
-           backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-            borderColor: '#EBBA95',
-        borderWidth: 2,
+           backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
+            borderColor: 'gray',
+        borderWidth: .5,
         borderRadius: 10
     },
 	
     title: {
-        text: 'Priority'
+        text: 'Priority',
+         style: {
+            color:'white'
+        }
     },
     xAxis: {
+        lineColor: '#ffdb58',
+        lineWidth: 1,
         categories: ['MAT Sprint 1', 'MAT Sprint 2', 'MAT Sprint 3', 'MAT Sprint 4']
     },
     yAxis: {
+        lineColor: '#ffdb58',
+        lineWidth: 1,
         min: 0,
         title: {
             text: 'Priority'
@@ -334,7 +374,7 @@ Highcharts.chart('container3', {
             enabled: true,
             style: {
                 fontWeight: 'bold',
-                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'white'
             }
         }
     },
@@ -342,11 +382,12 @@ Highcharts.chart('container3', {
         align: 'right',
         x: -30,
         verticalAlign: 'top',
+         itemStyle: {
+                   color: 'white'
+        },
         y: 25,
         floating: true,
-        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-        borderColor: '#CCC',
-        borderWidth: 1,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'black',
         shadow: false
     },
     tooltip: {
@@ -357,7 +398,7 @@ Highcharts.chart('container3', {
         column: {
             stacking: 'normal',
             dataLabels: {
-                enabled: true,
+               
                 color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
             }
         }
