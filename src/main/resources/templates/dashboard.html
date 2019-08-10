@@ -313,7 +313,7 @@ Highcharts.chart('container3', {
         text: 'Priority'
     },
     xAxis: {
-        categories: ['MAT Sprint 1', 'MAT Sprint 2', 'MAT Sprint 3', 'MAT Sprint 4']
+        categories: /*<![CDATA[*/[[${sprintNameForPriorityChart}]]/*]]>*/
     },
     yAxis: {
         min: 0,
@@ -353,23 +353,20 @@ Highcharts.chart('container3', {
         }
     },
     series: [{
-        name: 'Lowest',
-        data: [1, 0, 0, 0]
-    }, {
-        name: 'High',
-        data: [1, 1, 2, 0]
-    },
-	{
-        name: 'Low',
-        data: [1, 0, 1, 0]
-    }, 
-	{
         name: 'Highest',
-        data: [2, 1, 1, 0]
-    },
-    {
+        data: [[${highest}]]
+    },{
+        name: 'High',
+        data: [[${high}]]
+    },{
         name: 'Medium',
-        data: [0, 1, 1, 5]
+        data: [[${medium}]]
+    },{
+        name: 'Low',
+        data: [[${low}]]
+    },{
+        name: 'Lowest',
+        data: [[${lowest}]]
     }]
 });
 		</script>
